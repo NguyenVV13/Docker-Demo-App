@@ -1,0 +1,23 @@
+{
+  "name": "docker-demo-app",
+  "version": "1.0.0",
+  "description": "demo app for developing with docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenVV13/Docker-Demo-App.git"
+  },
+  "author": "Vi Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenVV13/Docker-Demo-App/issues"
+  },
+  "homepage": "https://github.com/NguyenVV13/Docker-Demo-App#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

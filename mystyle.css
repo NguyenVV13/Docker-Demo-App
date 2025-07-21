@@ -3,12 +3,12 @@
 /* Styles for elements */
 img {
     width: 300px;
-    height: auto;
+    height: 300px;
     display: block;
     margin-bottom: 20px;
 }
 hr {
-    width: auto;
+    width: 400px;
     margin-left: 0;
 }
 h3 {
@@ -28,15 +28,15 @@ h3 {
     margin-top: 20px;
 }
 
-/* Styles for IDs */
-/*
+/* Styles for IDs, they are not visible by default,
+   but will be changed to become visible in profile.js init() */
 #container {
-    display: none;
+    display: block;
 }
 #container-edit {
     display: none;
 }
-*/
+
 /* Sets style for input element in ID container-edit only */
 #container-edit input {
     height: 32px;
