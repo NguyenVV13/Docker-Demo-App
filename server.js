@@ -7,12 +7,14 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 
+app.use('/public', express.static(path.join(__dirname, 'files')));
+
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/profile-picture', function(req, res) {
-    let img = fs.readFileSync(path.join(__dirname, "images/cafe.jpg"));
+    let img = fs.readFileSync(path.join(__dirname, 'files', 'images', 'cafe.jpg'));
     res.writeHead(200, {'Content-Type': 'image/jpg' });
     res.end(img, 'binary');
 });
