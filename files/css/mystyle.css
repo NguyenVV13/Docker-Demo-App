@@ -31,7 +31,7 @@ h3 {
 /* Styles for IDs, they are not visible by default,
    but will be changed to become visible in profile.js init() */
 #container {
-    display: block;
+    display: none;
 }
 #container-edit {
     display: none;
