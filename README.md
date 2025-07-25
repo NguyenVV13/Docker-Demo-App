@@ -54,3 +54,28 @@ Uses NodeJS with Express module and MongoDB for the backend. NodeJS sets up the 
 7. Access the NodeJS application from the browser
 
         http://localhost:3000
+
+### Using Docker Compose
+
+1. Start MongoDB and Mongo Express using the YAML file
+
+        docker-compose -f mongo.yaml up
+
+2. Open Mongo Express from the browser
+
+        http://localhost:8081
+
+    - May have to authenticate using the basicAuth credentials `admin:pass` that are set by default in config.js in the container
+
+3. Create the `my-db` database and `users` collection in Mongo Express
+
+4. Start the NodeJS application locally
+    
+    a. Go to the main directory of the project where the NodeJS server file is
+    
+        npm install
+        node server.js
+
+7. Access the NodeJS application from the browser
+
+        http://localhost:3000
