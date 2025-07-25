@@ -33,7 +33,7 @@ Uses NodeJS with Express module and MongoDB for the backend. NodeJS sets up the 
         docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=mongodb --name mongo-express --net mongo-network mongo-express
 
     - `-p`: in the command above are the default port values for Mongo Express
-    - `-e`: the environment variables ADMINUSERNAME and ADMINPASSWORD are required to authenticate with MongoDB, since we overrode those values when starting up the MongoDB container
+    - `-e`: the environment variables ADMINUSERNAME and ADMINPASSWORD are required to authenticate with MongoDB, since we overrode those values when starting up the MongoDB container in the previous step
         - ME_CONFIG_MONGODB_SERVER must match the name of the MongoDB container set up in the previous step
 
 4. Open Mongo Express from the browser
