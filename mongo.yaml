@@ -1,13 +1,13 @@
 services:
   mongodb:
-    image: mongo
+    image: mongo:8
     ports:
      - 27017:27017
     environment:
      - MONGO_INITDB_ROOT_USERNAME=admin
      - MONGO_INITDB_ROOT_PASSWORD=password
   mongo-express:
-    image: mongo-express
+    image: mongo-express:1.0.2
     ports:
      - 8081:8081
     environment:
