@@ -40,10 +40,10 @@ let databaseName = "user-account";
 
 // Gets the profile details of the first user in the database
 app.get('/get-profile', async function (req, res) {
-    let response = {};
+    let result = {};
 
     // Connect to the db
-    const client = new MongoClient(mongoUrlLocal);
+    const client = new MongoClient(mongoUrlDocker);
     try {
         await client.connect();
 
@@ -68,7 +68,7 @@ app.get('/get-profile', async function (req, res) {
 app.post('/update-profile', async function (req, res) {
     let userObj = req.body;
 
-    const client = new MongoClient(mongoUrlLocal);
+    const client = new MongoClient(mongoUrlDocker);
     try {
         await client.connect();
 

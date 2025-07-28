@@ -10,7 +10,7 @@ In this project, HTML, CSS, and JavaScript are used for the frontend. HTML is us
 
 NodeJS with Express module and MongoDB are used for the backend. NodeJS sets up the server and connects the website with MongoDB, taking user inputs via text fields and saving the data to the NoSQL database. Database entries are visualized using Mongo Express.
 
-Although the Dockerfile in this repo is usable in that the image can be installed and the container spun up, it is purely for demonstration purposes, to show how an image of an app is built and pushed into a Docker repository.
+Although the Dockerfile in this repo is usable in that the image can be installed and the container spun up, it is purely for demonstration purposes, to show how an image of an app is built and pushed into a Docker repository. Afterwards, a dev server, integration server, or whatever end user can pull the image for containerized app deployment.
 
 ## Running the App
 

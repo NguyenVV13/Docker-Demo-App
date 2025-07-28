@@ -1,4 +1,8 @@
 services:
+  my-app:  # Example of conatinerized app deployment from imaged pulled from private repo
+    image: nguyenvv13/nana-docker-demo:1.2  # Since this isn't an official Docker image, the registry domain must be included
+    ports:
+     - 3000:3000
   mongodb:
     image: mongo:8
     ports:
