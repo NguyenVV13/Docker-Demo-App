@@ -8,6 +8,7 @@ services:
      - MONGO_INITDB_ROOT_PASSWORD=password
   mongo-express:
     image: mongo-express:1.0.2
+    restart: always  # fixes MongoNetworkError when MongoDB is not ready when Mongo Express starts
     ports:
      - 8081:8081
     environment:
