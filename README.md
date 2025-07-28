@@ -4,7 +4,7 @@ This is a simple webapp that takes user input in text fields and updates the web
 
 https://www.youtube.com/watch?v=3c-iBn73dDE
 
-The idea behind this project is to simulate how development could work with Docker. The developer pulls an image of MongoDB to program the frontend and backend code with, and commits this code to a repo like GitHub. CI/CD operations that would be performed with something like Jenkins, such as taking the new tested code, building the app, and creating a new Docker image with a Dockerfile, are stepped through by hand.
+The idea behind this project is to simulate how development could work with Docker. The developer pulls an image of MongoDB to program the frontend and backend code with, and commits this code to a repo like GitHub. CI/CD operations that would be performed with something like Jenkins, such as taking the new tested code, building the app, and creating a new Docker image with the committed Dockerfile, are stepped through by hand. Although the Dockerfile in this repo is usable in that the image can be installed and the container spun up, it is purely for demonstration purposes.
 
 In this project, HTML, CSS, and JavaScript are used for the frontend. HTML is used to structure the website, CSS provides the style, and JavaScript is used to dynamically change the value of elements on the webpage when the buttons for editing and saving the profile are pressed.
 
