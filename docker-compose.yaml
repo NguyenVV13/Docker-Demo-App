@@ -2,20 +2,25 @@ services:
   my-app:  # Example of conatinerized app deployment from imaged pulled from private repo
     image: nguyenvv13/nana-docker-demo:1.2  # Since this isn't an official Docker image, the registry domain must be included
     ports:
-     - 3000:3000
+      - 3000:3000
   mongodb:
     image: mongo:8
     ports:
-     - 27017:27017
+      - 27017:27017
     environment:
-     - MONGO_INITDB_ROOT_USERNAME=admin
-     - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db  # Default path for MongoDB data storage
   mongo-express:
     image: mongo-express:1.0.2
     restart: always  # fixes MongoNetworkError when MongoDB is not ready when Mongo Express starts
     ports:
-     - 8081:8081
+      - 8081:8081
     environment:
-     - ME_CONFIG_MONGODB_AUTH_USERNAME=admin
-     - ME_CONFIG_MONGODB_AUTH_PASSWORD=password
-     - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=admin
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+volumes:
+  mongo-data:
+    driver: local  # Extra info for Docker to create physical storage on the local file system, not an external one
