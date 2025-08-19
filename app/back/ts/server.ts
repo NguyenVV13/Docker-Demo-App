@@ -2,14 +2,14 @@
  * Node.js file for the app backend
  */
 
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const bodyParser = require('body-parser');
-const { MongoClient } = require('mongodb');
+import express from 'express';
+import path from 'path';
+import fs from 'fs';
+import bodyParser from 'body-parser';
+import { MongoClient } from 'mongodb';
 const app = express();
 
-app.use('/public', express.static(path.join(__dirname, 'files')));
+app.use('/public', express.static(path.join(__dirname, '..', '..', 'front')));
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -17,11 +17,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'front', 'html', 'index.html'));
 });
 
 app.get('/profile-picture', function(req, res) {
-    let img = fs.readFileSync(path.join(__dirname, 'files', 'images', 'cafe.jpg'));
+    let img = fs.readFileSync(path.join('__dirname', '..', '..', 'front', 'images', 'cafe.jpg'));
     res.writeHead(200, { 'Content-Type': 'image/jpg' });
     res.end(img, 'binary');
 });
@@ -40,10 +40,10 @@ let databaseName = "user-account";
 
 // Gets the profile details of the first user in the database
 app.get('/get-profile', async function (req, res) {
-    let result = {};
+    let result: {} | null = null;
 
     // Connect to the db
-    const client = new MongoClient(mongoUrlDocker);
+    const client = new MongoClient(mongoUrlLocal);
     try {
         await client.connect();
 
@@ -68,7 +68,7 @@ app.get('/get-profile', async function (req, res) {
 app.post('/update-profile', async function (req, res) {
     let userObj = req.body;
 
-    const client = new MongoClient(mongoUrlDocker);
+    const client = new MongoClient(mongoUrlLocal);
     try {
         await client.connect();
 
